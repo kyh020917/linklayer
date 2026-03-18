@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-grotesk: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* 가로 스크롤 완전 차단 */
+    overflow-x: hidden;
+    /* 세로 스크롤: 내용이 넘칠 때만 */
+    overflow-y: auto;
+    /* 스크롤바 항상 공간 차지 (레이아웃 흔들림 방지) */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    /* 배경 투명 — 각 페이지가 자기 배경색을 씀 */
+    background: transparent;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* 스크롤바 스타일 (크롬/엣지) */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+}
