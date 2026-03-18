@@ -213,7 +213,7 @@ export function CoderLight({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = info.color + '55'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = '#e8e4de'; } }}>
@@ -290,7 +290,7 @@ export function GamerDark({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = 'rgba(0,255,100,0.04)'; d.style.borderColor = 'rgba(0,255,100,0.2)'; d.style.transform = 'translateX(3px)'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = 'rgba(255,255,255,0.025)'; d.style.borderColor = 'rgba(255,255,255,0.06)'; d.style.transform = 'translateX(0)'; } }}>
@@ -356,14 +356,14 @@ export function GamerLight({ profile, links }: Props) {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#1a3a1a' }}>{link.title}</div>
-                  {type !== 'text' && <div style={{ fontFamily: "'Fira Code',monospace", fontSize: '10px', color: '#7aaf8a', marginTop: '1px' }}>{type === 'link' ? getDomain(link.url) : link.url}</div>}
+                  {(type as string) !== 'text' && <div style={{ fontFamily: "'Fira Code',monospace", fontSize: '10px', color: '#7aaf8a', marginTop: '1px' }}>{type === 'link' ? getDomain(link.url) : link.url}</div>}
                   {type === 'text' && <div style={{ fontSize: '12px', color: '#556655', marginTop: '2px', lineHeight: 1.5 }}>{link.url}</div>}
                 </div>
                 {isCopyable && <Copy size={12} color="#9acfaa" style={{ flexShrink: 0 }} />}
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = '#fff'; d.style.transform = 'translateX(3px)'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = 'rgba(255,255,255,0.8)'; d.style.transform = 'translateX(0)'; } }}>
@@ -411,7 +411,7 @@ export function SoftDark({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}>{content}</button>;
+            if ((type as string) !== 'text') return <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}>{content}</button>;
             return <div key={link.id}>{content}</div>;
           })}
         </div>
@@ -453,7 +453,7 @@ export function SoftLight({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = 'rgba(255,255,255,0.95)'; d.style.transform = 'translateY(-1px)'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.background = 'rgba(255,255,255,0.75)'; d.style.transform = 'translateY(0)'; } }}>
@@ -504,7 +504,7 @@ export function MinimalDark({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = '#3a3a38'; d.style.transform = 'translateY(-1px)'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = '#2a2a26'; d.style.transform = 'translateY(0)'; } }}>
@@ -555,7 +555,7 @@ export function MinimalLight({ profile, links }: Props) {
               </div>
             );
             if (isCopyable) return <CopyItem key={link.id} value={link.url}>{content}</CopyItem>;
-            if (type !== 'text') return (
+            if ((type as string) !== 'text') return (
               <button key={link.id} onClick={() => handleAction(link)} style={{ all: 'unset', display: 'block', cursor: 'pointer', width: '100%' }}
                 onMouseEnter={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = '#d0d0cc'; d.style.transform = 'translateY(-1px)'; } }}
                 onMouseLeave={e => { const d = (e.currentTarget as HTMLElement).querySelector('div') as HTMLDivElement; if (d) { d.style.borderColor = '#e8e8e4'; d.style.transform = 'translateY(0)'; } }}>
